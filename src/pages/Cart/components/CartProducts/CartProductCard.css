@@ -1,0 +1,27 @@
+.card__body {
+  width: 100%;
+}
+
+.card__quantity input {
+  width: var(--size-15);
+}
+
+.btn--quantity {
+  padding: 10px;
+  color: var(--material-dark);
+  background-color: var(--color-extra-light-gray);
+  border-radius: var(--radius-round);
+}
+
+@media screen and (max-width: 660px) {
+  .card--horizontal {
+    flex-direction: column;
+  }
+  .card__body {
+    max-width: 100%;
+    padding: var(--size-9);
+  }
+  .card__quantity p {
+    font-size: var(--size-9);
+  }
+}
