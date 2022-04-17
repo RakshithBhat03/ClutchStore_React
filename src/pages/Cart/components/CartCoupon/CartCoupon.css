@@ -1,0 +1,23 @@
+.coupon-input {
+  outline: var(--size-1) solid transparent;
+  border: var(--size-1) solid var(--color-light-gray);
+}
+
+.text-area {
+  resize: none;
+}
+.section-heading {
+  background-color: var(--color-extra-light-gray);
+  border-radius: var(--radius-lg);
+  font-size: calc(1.15 * var(--size-9));
+  text-transform: uppercase;
+  color: var(--primary-color-dark);
+}
+.product-coupon {
+  grid-area: product-coupon;
+  max-height: calc(23 * var(--size-9));
+  align-self: start;
+  background-color: var(--color-white);
+  box-shadow: var(--card-box-shadow);
+  border-radius: var(--radius-md);
+}
