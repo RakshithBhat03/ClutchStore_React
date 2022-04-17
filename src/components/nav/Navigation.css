@@ -1,0 +1,33 @@
+.navigation-wrapper {
+  top: var(--size-0);
+  z-index: 1000;
+  background-color: var(--color-white);
+  box-shadow: var(--nav-box-shadow);
+}
+
+.nav--logo {
+  width: 12.5rem;
+}
+/* Badge overwrite */
+
+.badge--sm {
+  font-size: var(--size-6);
+  height: var(--size-10);
+  width: var(--size-10);
+}
+
+.badge-icon .badge--top-right {
+  transform: translate(50%, -40%);
+}
+
+/* Buttons */
+
+.btn-auth {
+  background-color: var(--icon-danger);
+}
+
+/* Icon */
+
+.navigation__menu-list .nav-icon {
+  color: var(--material-black);
+}
