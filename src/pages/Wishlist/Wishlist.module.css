@@ -1,0 +1,13 @@
+.wishlist_wrapper {
+  box-shadow: var(--card-box-shadow);
+  background-color: var(--color-white);
+}
+
+.cart__empty {
+  width: 50rem;
+}
+
+.wishlist_heading h1 {
+  color: var(--material-dark);
+  margin-block: var(--size-5);
+}

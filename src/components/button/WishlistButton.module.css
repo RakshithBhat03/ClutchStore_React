@@ -1,0 +1,22 @@
+.btn_wishlist_wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.btn_heart {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  color: var(--btn-danger);
+  border: 1px solid var(--btn-danger);
+}
+
+.btn_heart:hover {
+  background-color: var(--btn-danger);
+  color: var(--color-white);
+}
+
+.active_wishlist {
+  background-color: var(--btn-danger);
+  color: var(--color-white);
+}

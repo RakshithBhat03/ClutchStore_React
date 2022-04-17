@@ -1,0 +1,15 @@
+.section-heading {
+  background-color: var(--color-extra-light-gray);
+  font-size: calc(1.15 * var(--size-9));
+  text-transform: uppercase;
+  color: var(--primary-color-dark);
+  width: max-content;
+}
+
+.product-summary {
+  background-color: var(--color-white);
+  box-shadow: var(--card-box-shadow);
+  grid-area: product-summary;
+  max-height: calc(23 * var(--size-9));
+  align-self: start;
+}

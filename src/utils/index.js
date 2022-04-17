@@ -9,3 +9,6 @@ export { filterPriceRange } from "./filterPriceRange";
 export { filterInStock } from "./filterInStock";
 export { filterFastDelivery } from "./filterFastDelivery";
 export { filterCategory } from "./filterCategory";
+export { getTotalCharges } from "./getTotalCharges";
+export { inCart } from "./inCart";
+export { inWishlist } from "./inWishlist";

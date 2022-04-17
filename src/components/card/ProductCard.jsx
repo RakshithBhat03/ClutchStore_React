@@ -1,7 +1,16 @@
 import style from "./ProductCard.module.css";
+import { WishlistButton } from "../button/WishlistButton";
+import { useCartAndWishlist } from "../../context";
+import { inCart } from "../../utils/";
 import { getRatingColor } from "../../utils/";
 import { getDiscountedPrice } from "../../utils/";
+import { useNavigate } from "react-router";
 const ProductCard = ({ product }) => {
+  const { cartAndWishlistItems, cartAndWishlistDispatch: dispatch } =
+    useCartAndWishlist();
+  const { cart } = cartAndWishlistItems;
+  const navigate = useNavigate();
+  const navigateToCart = () => navigate("/cart");
   return (
     <div className={`${style.product} `}>
       <div
@@ -49,11 +58,23 @@ const ProductCard = ({ product }) => {
           </div>
           <div className="card__link">
             <div className="card__link--btn width-100 justify-content-center">
-              <button
-                className={`btn btn--lg btn--primary txt-white btn--icon width-100 ${style.btn__primary_dark}`}>
-                <i className="fas fa-cart-plus" />
-                Add to cart
-              </button>
+              {inCart(cart, product._id) ? (
+                <button
+                  className="btn btn--lg btn--success txt-white btn--icon width-100"
+                  onClick={navigateToCart}>
+                  <i className="fas fa-cart-plus" />
+                  Go to Cart
+                </button>
+              ) : (
+                <button
+                  onClick={() =>
+                    dispatch({ type: "ADD_TO_CART", payload: product })
+                  }
+                  className={`btn btn--lg btn--primary txt-white btn--icon width-100 ${style.btn__primary_dark}`}>
+                  <i className="fas fa-cart-plus" />
+                  Add to cart
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -65,6 +86,9 @@ const ProductCard = ({ product }) => {
             </div>
           </div>
         )}
+        <div className={style.btn_wishlist_wrapper}>
+          <WishlistButton product={product} />
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,19 @@
+.product-cart {
+  grid-area: product-cart;
+  max-height: calc(46 * var(--size-9));
+  overflow-y: scroll;
+  background-color: var(--color-white);
+  box-shadow: var(--card-box-shadow);
+}
+.section-heading {
+  background-color: var(--color-extra-light-gray);
+  border-radius: var(--radius-lg);
+  font-size: calc(1.15 * var(--size-9));
+  text-transform: uppercase;
+  color: var(--primary-color-dark);
+}
+@media screen and (max-width: 660px) {
+  .product-cart .section-heading {
+    width: 50%;
+  }
+}
