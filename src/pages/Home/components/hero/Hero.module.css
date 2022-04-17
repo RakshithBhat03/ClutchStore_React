@@ -1,0 +1,55 @@
+.hero_wrapper {
+  filter: opacity(85%);
+  padding: var(--size-9);
+}
+
+.hero {
+  /* background-image: url("");
+  max-width: 80vw;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; */
+}
+.hero__img {
+  object-fit: cover;
+}
+.hero:hover {
+  cursor: pointer;
+}
+/* Hero text overlay */
+
+.hero_text {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  color: var(--color-white);
+}
+
+.hero_title {
+  max-width: 50ch;
+}
+
+.hero_text > span {
+  padding-inline: var(--size-5);
+}
+
+.hero_btn {
+  padding-inline: var(--size-5);
+}
+
+.btn__primary_dark {
+}
+
+.hero_btn button {
+  border-color: var(--color-white);
+  border-radius: var(--size-0);
+  background-color: var(--primary-color-dark);
+}
+
+@media screen and (max-width: 550px) {
+  .hero_title h1 {
+    font-size: var(--size-15);
+  }
+}
