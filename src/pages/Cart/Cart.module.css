@@ -1,0 +1,22 @@
+.wrapper {
+  background-color: var(--color-extra-light-gray);
+}
+
+.cart_wrapper {
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "product-cart product-summary";
+}
+
+@media screen and (max-width: 1300px) {
+  .cart_wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "product-cart "
+      "product-summary";
+  }
+}
+@media screen and (max-width: 660px) {
+  .cart_wrapper button {
+    font-size: var(--size-7);
+  }
+}
