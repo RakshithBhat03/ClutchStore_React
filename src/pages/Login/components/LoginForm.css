@@ -1,0 +1,42 @@
+.wrapper {
+  background-color: var(--color-extra-light-gray);
+}
+
+.auth-wrapper {
+  width: calc(22 * var(--size-9));
+  margin: auto;
+  padding: var(--size-11) var(--size-13);
+  box-shadow: var(--card-box-shadow);
+  background-color: var(--color-white);
+  color: var(--primary-color-dark);
+}
+
+.auth-wrapper button:not(.auth-social, .password-icon) {
+  color: var(--text-white);
+}
+
+.auth-wrapper input {
+  border-radius: var(--radius-sm);
+  border: var(--size-1) solid var(--color-light-gray);
+  outline: var(--size-1) solid transparent;
+}
+
+/* Title */
+
+.auth-title * {
+  font-size: var(--size-11);
+  color: var(--primary-color);
+}
+
+/* Auth buttons */
+
+.auth-social {
+  color: var(--primary-color);
+  border: var(--size-2) solid var(--primary-color);
+}
+
+/* Signup link */
+
+.auth-redirect a {
+  color: var(--primary-color);
+}
