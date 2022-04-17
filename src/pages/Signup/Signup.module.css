@@ -1,0 +1,20 @@
+.auth_wrapper {
+  width: calc(32 * var(--size-9));
+}
+
+.password_icon-wrapper .password_icon {
+  color: var(--color-black);
+  top: 10px;
+  right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .auth_wrapper {
+    width: calc(22 * var(--size-9));
+  }
+
+  .form_name,
+  .form_password {
+    flex-direction: column;
+  }
+}
