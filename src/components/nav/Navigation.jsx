@@ -1,6 +1,9 @@
 import "./Navigation.css";
 import { Link } from "react-router-dom";
+import { useCartAndWishlist } from "../../context";
 const Navigation = () => {
+  const { cartAndWishlistItems } = useCartAndWishlist();
+  const { cart, wishlist } = cartAndWishlistItems;
   return (
     <header className="navigation-wrapper">
       <div className="navigation max-width-1200 mx-auto">
@@ -36,7 +39,11 @@ const Navigation = () => {
                 <button className="btn btn--md btn--icon btn--outline">
                   <div className="badge-icon badge-icon--sm">
                     <i className="fas fa-heart nav-icon" />
-                    <span className="badge badge--sm badge--top-right"></span>
+                    {wishlist.length !== 0 && (
+                      <span className="badge badge--sm badge--top-right">
+                        {wishlist.length}
+                      </span>
+                    )}
                   </div>
                 </button>
               </Link>
@@ -46,7 +53,11 @@ const Navigation = () => {
                 <button className="btn btn--md btn--icon btn--outline">
                   <div className="badge-icon badge-icon--sm">
                     <i className="fas fa-shopping-cart nav-icon" />
-                    <span className="badge badge--sm badge--top-right"></span>
+                    {cart.length !== 0 && (
+                      <span className="badge badge--sm badge--top-right">
+                        {cart.length}
+                      </span>
+                    )}
                   </div>
                 </button>
               </Link>
