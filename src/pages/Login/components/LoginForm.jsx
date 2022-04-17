@@ -29,9 +29,9 @@ const LoginForm = () => {
                   <input type="checkbox" className="mr-5" />
                   Remember me
                 </label>{" "}
-                <a href="/" className="txt-sm">
+                <Link to="/login" className="txt-sm">
                   Forgot Password?
-                </a>{" "}
+                </Link>{" "}
               </div>
               <button type="submit" className="btn btn--md btn--primary">
                 Login
