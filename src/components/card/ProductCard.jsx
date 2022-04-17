@@ -1,4 +1,6 @@
 import style from "./ProductCard.module.css";
+import { getRatingColor } from "../../utils/";
+import { getDiscountedPrice } from "../../utils/";
 const ProductCard = ({ product }) => {
   return (
     <div className={`${style.product} `}>
@@ -29,11 +31,17 @@ const ProductCard = ({ product }) => {
               </small>
             )}
             <span className={`card__rating ml-auto`}>
-              {product.rating} <i className={` fas fa-star `}></i>
+              {product.rating}{" "}
+              <i
+                className={` fas fa-star ${
+                  style[getRatingColor(product.rating)]
+                }`}></i>
             </span>
           </div>
           <div className={`${style.card__price} card__price`}>
-            <span className="card__price--mrp">₹{}</span>
+            <span className="card__price--mrp">
+              ₹{getDiscountedPrice(product.discount, product.price)}
+            </span>
             <span className="card__price--strike">₹{product.price}</span>
             <span className="card__price--discount">
               {`${product.discount}% off`}

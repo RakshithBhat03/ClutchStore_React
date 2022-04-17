@@ -1,1 +1,11 @@
 export { getTeams } from "./getTeams";
+export { getRatingColor } from "./getRatingColor";
+export { getFilteredData } from "./getFilteredData";
+export { getDiscountedPrice } from "./getDiscountedPrice";
+export { filterTeam } from "./filterTeam";
+export { filterSortBy } from "./filterSortBy";
+export { filterRating } from "./filterRating";
+export { filterPriceRange } from "./filterPriceRange";
+export { filterInStock } from "./filterInStock";
+export { filterFastDelivery } from "./filterFastDelivery";
+export { filterCategory } from "./filterCategory";

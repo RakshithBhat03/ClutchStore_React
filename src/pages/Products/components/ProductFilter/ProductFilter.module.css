@@ -1,0 +1,21 @@
+.filter_wrapper {
+  background-color: var(--color-white);
+  color: var(--material-black);
+  box-shadow: var(--card-box-shadow);
+  height: 85vh;
+  overflow-y: scroll;
+}
+
+.filter_wrapper :is(h3, h4) {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+.btn__primary_dark {
+  background-color: var(--primary-color-dark);
+}
+
+@media screen and (max-width: 900px) {
+  .filter_wrapper {
+    display: none;
+  }
+}

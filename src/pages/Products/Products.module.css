@@ -1,0 +1,8 @@
+.products_wrapper {
+  grid-template-columns: 1fr 4fr;
+}
+@media screen and (max-width: 900px) {
+  .products_wrapper {
+    grid-template-columns: 1fr;
+  }
+}
