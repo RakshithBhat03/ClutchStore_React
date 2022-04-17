@@ -1,0 +1,27 @@
+.collection_list {
+  transition: all 0.3s linear;
+}
+
+.collection {
+  width: calc(19 * var(--size-9));
+  /* height: calc(19 * var(--size-9)); */
+  /* overflow: hidden; */
+  box-shadow: var(--card-box-shadow);
+  position: relative;
+  transition: all 0.2s linear;
+}
+
+.main_collection h2,
+.main_popular h2 {
+  color: var(--material-dark);
+}
+
+.main_collection {
+  /* width: 80vw; */
+}
+
+@media screen and (max-width: 550px) {
+  .collection {
+    width: calc(15 * var(--size-9));
+  }
+}

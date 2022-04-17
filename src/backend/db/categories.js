@@ -8,20 +8,37 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
-    description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+    categoryName: "Backpack",
+    description: "",
+    image_URL:
+      "https://res.cloudinary.com/clutchaf/image/upload/v1648459257/ClutchStore/Lakers/Bags/Los_Angeles_Lakers_FOCO_Big_Logo_Bungee_Backpack_xv6cf2.webp",
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
-    description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+    categoryName: "Caps",
+    description: "",
+    image_URL:
+      "https://res.cloudinary.com/clutchaf/image/upload/v1648459256/ClutchStore/Warriors/Caps/Mens_Golden_State_Warriors_New_Era_Black-Gold_2021-22_City_Edition_City_Edition_Official_59FIFTY_Fitted_Hat_tztmfr.webp",
   },
   {
     _id: uuid(),
-    categoryName: "horror",
-    description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+    categoryName: "Hoodies",
+    description: "",
+    image_URL:
+      "https://res.cloudinary.com/clutchaf/image/upload/v1648459254/ClutchStore/Heat/Hoodies/Men_s_Miami_Heat_Fanatics_Branded_Red_Primary_Team_Logo_Pullover_Hoodie_ps5mcb.webp",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Jerseys",
+    description: "",
+    image_URL:
+      "https://res.cloudinary.com/clutchaf/image/upload/v1648459255/ClutchStore/Bulls/Jerseys/Men_s_Chicago_Bulls_Michael_Jordan_Mitchell_Ness_Red_1997-98_Hardwood_Classics_Authentic_Player_Jersey_kzogjk.webp",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Shorts",
+    description: "",
+    image_URL:
+      "https://res.cloudinary.com/clutchaf/image/upload/v1648459256/ClutchStore/Clippers/Shorts/Mens_LA_Clippers_Nike_Light_Blue-White_2021-22_City_Edition_Swingman_Shorts_ftzsp7.webp",
   },
 ];
