@@ -1,10 +1,10 @@
 import "./CartSummary.css";
-import { useCartAndWishlist } from "../../../../context/";
 import { getTotalCharges } from "../../../../utils";
+import { useSelector } from "react-redux";
 function CartSummary() {
-  const { cartAndWishlistItems } = useCartAndWishlist();
+  const { cart } = useSelector((store) => store.products);
   const { orderSubtotal, shippingCharges, taxCharges, totalPrice } =
-    getTotalCharges(cartAndWishlistItems.cart);
+    getTotalCharges(cart);
   return (
     <section className="product-summary display-flex flex-col justify-content-center gap-1 p-11">
       <div className="section-heading txt-bold txt-left py-5 px-8">
@@ -31,13 +31,11 @@ function CartSummary() {
           <span className="product-price txt-bold">₹{totalPrice}</span>
         </div>
       </div>
-      <a href="/" className="width-30 mx-auto">
-        <button
-          type="button"
-          className="btn btn--primary-dark btn--md width-100 mx-auto txt-white display-flex justify-content-center">
-          <span>Checkout</span>
-        </button>
-      </a>
+      <button
+        type="button"
+        className=" width-30 btn btn--primary-dark btn--md  mx-auto txt-white display-flex justify-content-center">
+        <span>Checkout</span>
+      </button>
     </section>
   );
 }

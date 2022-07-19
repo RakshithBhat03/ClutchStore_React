@@ -1,13 +1,16 @@
-import { useProduct } from "../../../../context/";
-import { useFilter } from "../../../../context";
-import { ProductCard } from "../../../../components/card/ProductCard";
+import { ProductCard } from "../../../../components";
 import { getFilteredData } from "../../../../utils/";
 import "./ProductShowcase.css";
+import { useSelector } from "react-redux";
+import { Loader } from "../../../../components";
 const ProductShowcase = () => {
-  const { productData } = useProduct();
-  const { filter } = useFilter();
-  const filteredData = getFilteredData(productData.products, filter);
-  return (
+  const { allProducts, isLoading } = useSelector((store) => store.products);
+  const filter = useSelector((store) => store.filter);
+  const filteredData = getFilteredData(allProducts, filter);
+
+  return isLoading ? (
+    <Loader />
+  ) : (
     <section
       className={`showcase-wrapper display-grid width-100 px-5 pb-9 gap-2`}>
       {filteredData.map((product) => (

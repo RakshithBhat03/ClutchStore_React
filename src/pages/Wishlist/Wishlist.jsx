@@ -1,13 +1,20 @@
-import { useCartAndWishlist } from "../../context";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getWishlistItems } from "../../actions";
+import { useDocumentTitle } from "../../hooks";
 import { WishlistProuducts } from "./components/WishlistProducts";
 import style from "./Wishlist.module.css";
 const Wishlist = () => {
-  const { cartAndWishlistItems } = useCartAndWishlist();
-  const { wishlist } = cartAndWishlistItems;
+  const { wishlist } = useSelector((store) => store.products);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getWishlistItems());
+  }, []);
+  useDocumentTitle("Wishlist | Clutch Store");
   return (
     <div className="main min-75-vh width-100 display-flex justify-content-center">
       <main className="width-100">
-        {wishlist.length !== 0 && (
+        {wishlist.length > 0 && (
           <div
             className={`${style.wishlist_wrapper} display-flex flex-col width-90 mx-auto gap-1 p-11 my-9`}>
             <div className={`${style.wishlist_heading} mx-auto`}>

@@ -1,9 +1,20 @@
 import "./Navigation.css";
-import { Link } from "react-router-dom";
-import { useCartAndWishlist } from "../../context";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logoutUser } from "../../features/authSlice";
+import { clearProductState } from "../../features/productSlice";
 const Navigation = () => {
-  const { cartAndWishlistItems } = useCartAndWishlist();
-  const { cart, wishlist } = cartAndWishlistItems;
+  const dispatch = useDispatch();
+  const { userToken } = useSelector((store) => store.auth);
+  const navigate = useNavigate();
+  const handleAuth = () => {
+    if (userToken) {
+      dispatch(logoutUser());
+      dispatch(clearProductState());
+      navigate("/");
+    } else navigate("/login");
+  };
+  const { cart, wishlist } = useSelector((store) => store.products);
   return (
     <header className="navigation-wrapper">
       <div className="navigation max-width-1200 mx-auto">
@@ -23,9 +34,9 @@ const Navigation = () => {
           <input type="text" className="input-field input--lg" />
         </div>
         <div className="navigation__login">
-          <Link to="/login">
-            <button className="btn btn-auth btn--md px-12">Login</button>
-          </Link>
+          <button onClick={handleAuth} className="btn btn-auth btn--md px-12">
+            {userToken ? `Logout` : `Login`}
+          </button>
         </div>
         <div className="navigation__hamburger">
           <button className="btn btn--md btn--icon btn--outline">
