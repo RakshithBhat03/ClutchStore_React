@@ -2,7 +2,7 @@
   width: calc(32 * var(--size-9));
 }
 
-.password_icon-wrapper .password_icon {
+.password_icon_wrapper .password_icon {
   color: var(--color-black);
   top: 10px;
   right: 10px;
