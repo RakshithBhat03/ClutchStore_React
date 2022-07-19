@@ -1,6 +1,8 @@
 const filterTeam = (products, filterState) =>
-  filterState.teams.length
-    ? products.filter((product) => filterState.teams.includes(product.team))
+  filterState.filteredTeams.length
+    ? products.filter((product) =>
+        filterState.filteredTeams.includes(product.team)
+      )
     : [...products];
 
 export { filterTeam };

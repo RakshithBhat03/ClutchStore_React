@@ -1,7 +1,7 @@
 const filterCategory = (products, filterState) =>
-  filterState.categories.length
+  filterState.filteredCategories.length
     ? products.filter((product) =>
-        filterState.categories.includes(product.categoryName)
+        filterState.filteredCategories.includes(product.categoryName)
       )
     : [...products];
 
