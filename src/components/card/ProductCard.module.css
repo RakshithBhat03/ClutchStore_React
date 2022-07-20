@@ -2,6 +2,7 @@
 
 .product {
   width: calc(16 * var(--size-9));
+  cursor: pointer;
 }
 
 /* Overwrite card properties */

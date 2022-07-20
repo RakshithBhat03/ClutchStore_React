@@ -11,7 +11,8 @@
   color: var(--primary-color-dark);
 }
 
-.auth-wrapper button:not(.auth-social, .password-icon) {
+.auth-wrapper
+  button:not(.auth-social, .password-icon, .btn-password-visibility) {
   color: var(--text-white);
 }
 
@@ -39,4 +40,15 @@
 
 .auth-redirect a {
   color: var(--primary-color);
+}
+
+/* Buttons */
+
+.btn-password-visibility {
+  position: absolute;
+  font-size: 1rem;
+  right: 1rem;
+  top: 12px;
+  color: var(--text-black);
+  /* absolute text-base sm:text-xl right-4 top-3 */
 }

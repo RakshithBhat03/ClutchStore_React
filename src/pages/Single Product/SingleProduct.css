@@ -1,0 +1,53 @@
+.single-product-wrapper {
+  min-height: 65vh;
+}
+.single-product {
+  width: 75rem;
+}
+.product-image {
+  width: 30rem;
+}
+.product-body {
+  max-width: max-content;
+  margin-left: 5rem;
+}
+.product-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+.product-price {
+  font-size: 1.75rem;
+}
+.product-description {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.product-fast-delivery {
+  background-color: var(--btn-success);
+  border-radius: var(--radius-round);
+  font-size: 12px;
+}
+.product-rating {
+  font-size: 1.25rem;
+}
+.product-cta {
+  margin-top: 5rem;
+}
+.card__badge {
+  border-radius: var(--radius-md);
+  background-color: var(--primary-color-dark);
+  padding: var(--size-4) var(--size-5);
+  top: var(--size-7);
+  left: var(--size-7);
+}
+.above_four_rating {
+  color: var(--input-success);
+}
+
+.above_three_rating {
+  color: var(--btn-warning);
+}
+.below_three_rating {
+  color: var(--btn-danger);
+}

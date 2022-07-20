@@ -1,26 +1,46 @@
 import style from "./ProductCard.module.css";
 import { WishlistButton } from "../button/WishlistButton";
-import { useCartAndWishlist } from "../../context";
 import { inCart } from "../../utils/";
 import { getRatingColor } from "../../utils/";
 import { getDiscountedPrice } from "../../utils/";
 import { useNavigate } from "react-router";
+import { addToCart } from "../../actions";
+import { useDispatch, useSelector } from "react-redux";
+import { Loader } from "../Loader/Loader";
+import { useEffect, useState } from "react";
 const ProductCard = ({ product }) => {
-  const { cartAndWishlistItems, cartAndWishlistDispatch: dispatch } =
-    useCartAndWishlist();
-  const { cart } = cartAndWishlistItems;
+  const [imageLoader, setImageLoader] = useState(true);
+  const [btnLoader, setBtnLoader] = useState(false);
+  const { cart } = useSelector((store) => store.products);
+  const { userToken, status } = useSelector((store) => store.auth);
   const navigate = useNavigate();
-  const navigateToCart = () => navigate("/cart");
+  const dispatch = useDispatch();
+  useEffect(() => {
+    setBtnLoader(false);
+  }, [status]);
+
+  const navigateToCart = (e) => {
+    e.stopPropagation();
+    navigate("/cart");
+  };
   return (
-    <div className={`${style.product} `}>
+    <div
+      onClick={() => {
+        navigate(`/products/${product._id}`);
+      }}
+      className={`${style.product} `}>
       <div
         className={`${style.card} card card--vertical card--box-shadow position-relative`}>
         <div
           className={`${style.card__img} display-block width-100 overflow-hidden`}>
+          {imageLoader && <Loader />}
           <img
             src={product.image_URL}
             alt={product.title}
-            className="img--responisve overflow-hidden"
+            className={
+              imageLoader ? `display-none` : `img--responisve overflow-hidden`
+            }
+            onLoad={() => setImageLoader(false)}
           />
         </div>
         <div
@@ -67,12 +87,22 @@ const ProductCard = ({ product }) => {
                 </button>
               ) : (
                 <button
-                  onClick={() =>
-                    dispatch({ type: "ADD_TO_CART", payload: product })
-                  }
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    userToken
+                      ? (dispatch(addToCart(product)),
+                        setBtnLoader((state) => !state))
+                      : navigate("/login");
+                  }}
                   className={`btn btn--lg btn--primary txt-white btn--icon width-100 ${style.btn__primary_dark}`}>
-                  <i className="fas fa-cart-plus" />
-                  Add to cart
+                  {btnLoader ? (
+                    <Loader width="1rem" height="1rem" />
+                  ) : (
+                    <>
+                      <i className="fas fa-cart-plus" />
+                      <span>Add to Cart</span>
+                    </>
+                  )}
                 </button>
               )}
             </div>

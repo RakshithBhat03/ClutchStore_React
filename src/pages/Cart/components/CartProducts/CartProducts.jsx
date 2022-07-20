@@ -1,10 +1,9 @@
 import "./CartProducts.css";
 import { CartProductCard } from "./CartProductCard";
-import { useCartAndWishlist } from "../../../../context";
+import { useSelector } from "react-redux";
 
 function CartProducts() {
-  const { cartAndWishlistItems } = useCartAndWishlist();
-  const { cart } = cartAndWishlistItems;
+  const { cart } = useSelector((store) => store.products);
   return (
     <section className="product-cart display-flex flex-col justify-content-start width-100 gap-1 p-11">
       <div className="section-heading txt-bold txt-left py-5 px-8 width-30">

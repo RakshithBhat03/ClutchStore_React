@@ -12,3 +12,5 @@ export { filterCategory } from "./filterCategory";
 export { getTotalCharges } from "./getTotalCharges";
 export { inCart } from "./inCart";
 export { inWishlist } from "./inWishlist";
+export * from "./localStorage";
+export { cartSubtotalReducer } from "./cartSubtotalReducer";

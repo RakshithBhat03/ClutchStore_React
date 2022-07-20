@@ -8,7 +8,7 @@ import { v4 as uuid } from "uuid";
 export const products = [
   //Bulls
   {
-    _id: uuid(),
+    _id: "6c2701cd-4cbd-4118-8f80-bd49723c22c0",
     categoryName: "Backpack",
     description: "Chicago Bulls Herschel Supply Co. Settlement Backpack",
     discount: "15",
@@ -24,7 +24,7 @@ export const products = [
     title: "chicago-bulls-backpack",
   },
   {
-    _id: uuid(),
+    _id: "3a7c9612-4258-47da-be1a-d61679a55f6c",
     categoryName: "Caps",
     description:
       "Men's Chicago Bulls New Era Black Criss Cross 9FIFTY Trucker Snapback Hat",
@@ -41,7 +41,7 @@ export const products = [
     title: "chicago-bulls-cap",
   },
   {
-    _id: uuid(),
+    _id: "2c840372-e3b3-4219-80f3-bb28c539fb1c",
     categoryName: "Jerseys",
     description:
       "Men's Chicago Bulls Michael Jordan Mitchell & Ness Red 1997-98 Hardwood Classics Authentic Player Jersey",
@@ -58,7 +58,7 @@ export const products = [
     title: "chicago-bulls-jerseys",
   },
   {
-    _id: uuid(),
+    _id: "95c8fe1a-e60e-4a2b-863e-4820f7177a35",
     categoryName: "Jerseys",
     description:
       "Youth Chicago Bulls Zach LaVine Fanatics Branded White Fast Break Replica Jersey - Association Edition",
@@ -75,7 +75,7 @@ export const products = [
     title: "chicago-bulls-jerseys",
   },
   {
-    _id: uuid(),
+    _id: "0e6be4fe-5f7a-437e-b645-6e219d36c61b",
     categoryName: "Hoodies",
     description:
       "Men's Chicago Bulls Fanatics Branded Black Primary Team Logo Pullover Hoodie",
@@ -92,7 +92,7 @@ export const products = [
     title: "chicago-bulls-hoodies",
   },
   {
-    _id: uuid(),
+    _id: "95bd094c-0c90-448f-b30a-4529d374b19a",
     categoryName: "Shorts",
     description:
       "Men's Chicago Bulls Nike Red-Black 2021-22 City Edition Swingman Shorts",
@@ -112,7 +112,7 @@ export const products = [
   //Clippers
 
   {
-    _id: uuid(),
+    _id: "cb955cee-1efc-49b8-ba38-c7fcfea8db9b",
     categoryName: "Backpack",
     description:
       "LA Clippers Herschel Supply Co. Blue Satin Settlement Backpack",
@@ -129,7 +129,7 @@ export const products = [
     title: "la-clippers-backpack",
   },
   {
-    _id: uuid(),
+    _id: "920bdcb3-6acf-4b39-9386-159e65a38080",
     categoryName: "Caps",
     description:
       "Mens LA Clippers New Era Light Blue-Orange 2021-22 City Edition City Edition Official 59FIFTY Fitted Hat",
@@ -146,7 +146,7 @@ export const products = [
     title: "la-clippers-cap",
   },
   {
-    _id: uuid(),
+    _id: "a9a7c7b9-e828-4ca1-a4fa-72c2c3082e2d",
     categoryName: "Jerseys",
     description:
       "Mens LA Clippers Kawhi Leonard Fanatics Branded White Fast Break Replica Player Jersey - Association Edition",
@@ -163,7 +163,7 @@ export const products = [
     title: "la-clippers-jerseys",
   },
   {
-    _id: uuid(),
+    _id: "c0eab9ca-2d1f-4b6f-bd05-f18df937937c",
     categoryName: "Jerseys",
     description:
       "Mens LA Clippers Paul George Jordan Brand Black 2020-21 Swingman Jersey - Statement Edition",
@@ -180,7 +180,7 @@ export const products = [
     title: "la-clippers-jerseys",
   },
   {
-    _id: uuid(),
+    _id: "8f37e109-b5b1-4ff7-bc3a-02a2efeb9573",
     categoryName: "Hoodies",
     description:
       "Mens LA Clippers Fanatics Branded Royal Primary Team Logo Pullover Hoodie",
@@ -197,7 +197,7 @@ export const products = [
     title: "la-clippers-hoodies",
   },
   {
-    _id: uuid(),
+    _id: "df54126d-dffe-40d8-861d-9851b7abfa1e",
     categoryName: "Shorts",
     description:
       "Mens LA Clippers Nike Light Blue-White 2021-22 City Edition Swingman Shorts",
@@ -217,7 +217,7 @@ export const products = [
   //Lakers
 
   {
-    _id: uuid(),
+    _id: "cfefae20-f825-4e67-8ff0-754152df7a89",
     categoryName: "Backpack",
     description: "Los Angeles Lakers FOCO Big Logo Bungee Backpack",
     discount: "15",
@@ -233,7 +233,7 @@ export const products = [
     title: "la-lakers-backpack",
   },
   {
-    _id: uuid(),
+    _id: "29072670-8dcc-4e24-8e50-544fe6a6b28b",
     categoryName: "Caps",
     description:
       "Mens Los Angeles Lakers New Era Gray-Turquoise Color Pack 9FIFTY Snapback Hat",
@@ -250,7 +250,7 @@ export const products = [
     title: "la-lakers-cap",
   },
   {
-    _id: uuid(),
+    _id: "c1d941bc-289d-441e-9818-825fe29b8935",
     categoryName: "Jerseys",
     description:
       "Mens Los Angeles Lakers Kobe Bryant Mitchell & Ness Gold Hardwood Classics 2008-09 Authentic Jersey",
@@ -267,7 +267,7 @@ export const products = [
     title: "la-lakers-jerseys",
   },
   {
-    _id: uuid(),
+    _id: "1014b7d5-d9c3-4f56-85a9-1e79e4a44211",
     categoryName: "Jerseys",
     description:
       "Mens Los Angeles Lakers LeBron James Nike Black City Edition Swingman Jersey",
@@ -284,7 +284,7 @@ export const products = [
     title: "la-lakers-jerseys",
   },
   {
-    _id: uuid(),
+    _id: "93c7bc9e-d4f5-407a-9505-82c23dcfc66d",
     categoryName: "Hoodies",
     description:
       "Mens Los Angeles Lakers Fanatics Branded Black Primary Team Logo Pullover Hoodie",
@@ -301,7 +301,7 @@ export const products = [
     title: "la-lakers-hoodies",
   },
   {
-    _id: uuid(),
+    _id: "619b071a-bdb7-46e4-b281-c6daecd89168",
     categoryName: "Shorts",
     description:
       "Mens Los Angeles Lakers LeBron James Pro Standard Black Team Player Shorts",
@@ -321,7 +321,7 @@ export const products = [
   //Heat
 
   {
-    _id: uuid(),
+    _id: "3d32b8d9-1706-4388-af38-ae0f669d35fa",
     categoryName: "Backpack",
     description: "Miami Heat FOCO Solid Big Logo Backpack",
     discount: "10",
@@ -337,7 +337,7 @@ export const products = [
     title: "miami-heat-backpack",
   },
   {
-    _id: uuid(),
+    _id: "3076e2f4-6220-4f1f-b2c4-de0d4fe5328c",
     categoryName: "Caps",
     description:
       "Men's Miami Heat New Era Black 2021-22 City Edition Alternate 59FIFTY Fitted Hat",
@@ -354,7 +354,7 @@ export const products = [
     title: "miami-heat-cap",
   },
   {
-    _id: uuid(),
+    _id: "d5266132-bb64-4058-9773-4928e0c7abb2",
     categoryName: "Jerseys",
     description:
       "Mens Miami Heat Jimmy Butler Fanatics Branded Black 2021-22 Fast Break Replica Jersey - City Edition",
@@ -371,7 +371,7 @@ export const products = [
     title: "miami-heat-jerseys",
   },
   {
-    _id: uuid(),
+    _id: "92473c21-3829-4026-84e9-e5e25e8d3e98",
     categoryName: "Jerseys",
     description:
       "Miami Heat Jimmy Butler Nike White 2020-21 Swingman Player Jersey - Association Edition",
@@ -388,7 +388,7 @@ export const products = [
     title: "miami-heat-jerseys",
   },
   {
-    _id: uuid(),
+    _id: "a038c151-d986-453b-ab1c-e3ac1a532216",
     categoryName: "Hoodies",
     description:
       "Men's Miami Heat Fanatics Branded Red Primary Team Logo Pullover Hoodie",
@@ -405,7 +405,7 @@ export const products = [
     title: "miami-heat-hoodies",
   },
   {
-    _id: uuid(),
+    _id: "86e2b7cc-59a7-4e32-b686-85ab70662ecc",
     categoryName: "Shorts",
     description:
       "Mens Miami Heat Jordan Brand Red-Black 2020-21 Statement Edition Performance Swingman Shorts",
@@ -425,7 +425,7 @@ export const products = [
   //Warriors
 
   {
-    _id: uuid(),
+    _id: "71b15ef1-2209-482a-9db0-1f9d7357c8ba",
     categoryName: "Backpack",
     description: "Golden State Warriors FOCO Big Logo Bungee Backpack",
     discount: "12",
@@ -441,7 +441,7 @@ export const products = [
     title: "golden-state-warriors-backpack",
   },
   {
-    _id: uuid(),
+    _id: "96c75211-3e01-42df-be0f-ef9c76165a21",
     categoryName: "Caps",
     description:
       "Mens Golden State Warriors New Era Black-Gold 2021-22 City Edition City Edition Official 59FIFTY Fitted Hat",
@@ -458,7 +458,7 @@ export const products = [
     title: "golden-state-warriors-cap",
   },
   {
-    _id: uuid(),
+    _id: "36272c18-7c89-4f3a-b769-ab9525121424",
     categoryName: "Jerseys",
     description:
       "Mens Golden State Warriors Stephen Curry Fanatics Branded Gold Fast Break Team Replica Jersey - Statement Edition",
@@ -475,7 +475,7 @@ export const products = [
     title: "golden-state-warriors-jerseys",
   },
   {
-    _id: uuid(),
+    _id: "fd79ecca-9598-4624-a3d2-57312e0cf517",
     categoryName: "Jerseys",
     description:
       "Mens Golden State Warriors Stephen Curry Fanatics Branded White Fast Break Replica Player Jersey - Association Edition",
@@ -492,7 +492,7 @@ export const products = [
     title: "golden-state-warriors-jerseys",
   },
   {
-    _id: uuid(),
+    _id: "90a14567-3a6f-46cc-9f17-a4efa252f0f8",
     categoryName: "Hoodies",
     description:
       "Mens Golden State Warriors Stephen Curry Fanatics Branded Royal Team Playmaker Name & Number Pullover Hoodie",
@@ -509,7 +509,7 @@ export const products = [
     title: "golden-state-warriors-hoodies",
   },
   {
-    _id: uuid(),
+    _id: "a7a3ea3f-f998-496d-9fb9-ec40bb127f14",
     categoryName: "Shorts",
     description:
       "Mens Golden State Warriors Nike Black 2021-22 City Edition Swingman Shorts",
