@@ -5,9 +5,9 @@ const lowToHigh = (previous, current) =>
 const filterSortBy = (products, filter) => {
   switch (filter.sortBy) {
     case "HIGH_TO_LOW":
-      return products.sort(highToLow);
+      return [...products].sort(highToLow);
     case "LOW_TO_HIGH":
-      return products.sort(lowToHigh);
+      return [...products].sort(lowToHigh);
     default:
       return [...products];
   }
