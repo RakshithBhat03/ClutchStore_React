@@ -111,6 +111,25 @@ export const removeFromCart = createAsyncThunk(
     }
   }
 );
+export const removeAllItemsFromCart = createAsyncThunk(
+  "products/removeAllItemsFromCart",
+  async (_, thunkAPI) => {
+    const {
+      auth: { userToken },
+    } = thunkAPI.getState();
+    try {
+      const response = await axios.delete(`/api/user/cart`, {
+        headers: {
+          authorization: userToken,
+        },
+      });
+
+      return response.data;
+    } catch (error) {
+      thunkAPI.fulfillWithValue(error);
+    }
+  }
+);
 export const updateCartItem = createAsyncThunk(
   "products/updateCartItem",
   async ({ action, productId }, thunkAPI) => {
