@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { makeServer } from "./server";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
+import { ScrollToTop } from "./components";
 
 // Call make Server
 makeServer();
@@ -15,6 +16,7 @@ root.render(
   <BrowserRouter>
     <Provider store={store}>
       <App />
+      <ScrollToTop />
     </Provider>
   </BrowserRouter>
 );
