@@ -7,6 +7,7 @@ import {
   getCategories,
   getProductById,
   getWishlistItems,
+  removeAllItemsFromCart,
   removeFromCart,
   removeFromWishlist,
   updateCartItem,
@@ -40,6 +41,10 @@ const productSlice = createSlice({
       const categories = state.categories;
       const teams = state.teams;
       return (state = { ...initialState, allProducts, categories, teams });
+    },
+    clearCart: (state) => {
+      const cart = [];
+      return (state = { ...state, cart });
     },
   },
   extraReducers: {
@@ -137,6 +142,19 @@ const productSlice = createSlice({
       state.isCartLoading = false;
       state.error = true;
     },
+    [removeAllItemsFromCart.pending]: (state) => {
+      state.isCartLoading = true;
+      state.error = false;
+    },
+    [removeAllItemsFromCart.fulfilled]: (state, action) => {
+      state.cart = action.payload.cart;
+      state.isCartLoading = false;
+      state.error = false;
+    },
+    [removeAllItemsFromCart.rejected]: (state) => {
+      state.isCartLoading = false;
+      state.error = true;
+    },
     [updateCartItem.pending]: (state) => {
       state.isCartLoading = true;
       state.error = false;
@@ -180,5 +198,6 @@ const productSlice = createSlice({
     },
   },
 });
-export const { clearCurrentProduct, clearProductState } = productSlice.actions;
+export const { clearCurrentProduct, clearProductState, clearCart } =
+  productSlice.actions;
 export default productSlice.reducer;

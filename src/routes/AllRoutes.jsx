@@ -10,6 +10,7 @@ import {
 } from "../pages";
 import Mockman from "mockman-js";
 import { RequireAuth } from "./RequireAuth";
+import { SplashScreen } from "../components";
 const AllRoutes = () => {
   return (
     <Routes>
@@ -28,9 +29,9 @@ const AllRoutes = () => {
       <Route
         path="*"
         element={
-          <>
-            <h1>Page not found</h1>
-          </>
+          <div className="min-75-vh display-flex">
+            <SplashScreen text="Looks like you are lost" notFound={true} />
+          </div>
         }
       />
     </Routes>
