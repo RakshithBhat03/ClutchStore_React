@@ -1,10 +1,31 @@
-import { useProduct } from "../../../../context/";
-import { useFilter } from "../../../../context/";
+import { useDispatch, useSelector } from "react-redux";
+import { Loader } from "../../../../components";
+import {
+  filterCategory,
+  filterFastDelivery,
+  filterHighToLow,
+  filterInStock,
+  filterLowToHigh,
+  filterPriceRange,
+  filterRating,
+  filterReset,
+  filterTeam,
+} from "../../../../features/filterSlice";
 import style from "./ProductFilter.module.css";
 const ProductFilter = () => {
-  const { productData } = useProduct();
-  const { categories, teams } = productData;
-  const { filter, filterDispatch } = useFilter();
+  const { categories, teams, isLoading } = useSelector(
+    (store) => store.products
+  );
+  const dispatch = useDispatch();
+  const {
+    filteredCategories,
+    fastDelivery,
+    inStock,
+    priceRange,
+    rating,
+    sortBy,
+    filteredTeams,
+  } = useSelector((store) => store.filter);
   return (
     <aside
       className={`${style.filter_wrapper} display-flex flex-col justify-content-start py-7 ml-9 mr-3 px-9 gap-1`}>
@@ -12,7 +33,7 @@ const ProductFilter = () => {
         <h3 className="my-5">Filters</h3>
         <button
           type="button"
-          onClick={() => filterDispatch({ type: "RESET" })}
+          onClick={() => dispatch(filterReset())}
           className={`btn ${style.btn__primary_dark} btn--md txt-white filter-clear-btn`}>
           Reset
         </button>
@@ -28,13 +49,8 @@ const ProductFilter = () => {
             step={4000}
             list="tickmarks"
             className="input-slider width-100"
-            onChange={(event) =>
-              filterDispatch({
-                type: "PRICE_RANGE",
-                payload: event.target.value,
-              })
-            }
-            value={filter.priceRange}
+            onChange={(event) => dispatch(filterPriceRange(event.target.value))}
+            value={priceRange}
           />
           <datalist
             className="display-flex justify-content-between"
@@ -51,6 +67,7 @@ const ProductFilter = () => {
       <hr />
       <section className="filter-category display-flex flex-col justify-content-center gap-1">
         <h4 className="my-1 txt-bold">Category</h4>
+        {isLoading && <Loader />}
         <ul className="pl-10">
           {categories.map((category) => (
             <li key={category._id} className="py-5">
@@ -60,12 +77,9 @@ const ProductFilter = () => {
                   name="category"
                   className="txt-reg mr-9"
                   onChange={() =>
-                    filterDispatch({
-                      type: "CATEGORY",
-                      payload: category.categoryName,
-                    })
+                    dispatch(filterCategory(category.categoryName))
                   }
-                  checked={filter.categories.includes(category.categoryName)}
+                  checked={filteredCategories.includes(category.categoryName)}
                 />
                 {category.categoryName}
               </label>
@@ -81,12 +95,8 @@ const ProductFilter = () => {
             type="checkbox"
             name="fast-delivery"
             className="txt-reg mr-9"
-            onChange={() =>
-              filterDispatch({
-                type: "FAST_DELIVERY",
-              })
-            }
-            checked={filter.fastDelivery}
+            onChange={() => dispatch(filterFastDelivery())}
+            checked={fastDelivery}
           />
           Only Fast Delivery
         </label>
@@ -99,12 +109,8 @@ const ProductFilter = () => {
             type="checkbox"
             name="in-stock"
             className="txt-reg mr-9"
-            onChange={() =>
-              filterDispatch({
-                type: "IN_STOCK",
-              })
-            }
-            checked={filter.inStock}
+            onChange={() => dispatch(filterInStock())}
+            checked={inStock}
           />
           Only In Stock
         </label>
@@ -112,6 +118,7 @@ const ProductFilter = () => {
       <hr />
       <section className="filter-category display-flex flex-col justify-content-center gap-1">
         <h4 className="my-1 txt-bold">Teams</h4>
+        {isLoading && <Loader />}
         <ul className="pl-10">
           {teams.map((team) => (
             <li key={team._id} className="py-5">
@@ -120,13 +127,8 @@ const ProductFilter = () => {
                   type="checkbox"
                   name="team"
                   className="txt-reg mr-9"
-                  onChange={() =>
-                    filterDispatch({
-                      type: "TEAM",
-                      payload: team.teamName,
-                    })
-                  }
-                  checked={filter.teams.includes(team.teamName)}
+                  onChange={() => dispatch(filterTeam(team.teamName))}
+                  checked={filteredTeams.includes(team.teamName)}
                 />
                 {team.teamName}
               </label>
@@ -138,21 +140,19 @@ const ProductFilter = () => {
       <section className="filter-rating display-flex flex-col justify-content-center gap-1">
         <h4 className="my-1 ">Ratings</h4>
         <ul className="pl-10">
-          {[4, 3, 2, 1].map((rating) => (
+          {[4, 3, 2, 1].map((ratingNumber, index) => (
             <li
-              key={rating}
+              key={index}
               className="py-5 display-flex align-items-center gap-1">
               <input
-                onChange={() =>
-                  filterDispatch({ type: "RATING", payload: rating })
-                }
+                onChange={() => dispatch(filterRating(ratingNumber))}
                 type="radio"
                 name="star-rating"
-                id={`rating-${rating}`}
-                checked={filter.rating === rating}
+                id={`rating-${ratingNumber}`}
+                checked={ratingNumber === rating}
               />
-              <label htmlFor={`rating-${rating}`}>
-                <span>{rating}</span>
+              <label htmlFor={`rating-${ratingNumber}`}>
+                <span>{ratingNumber}</span>
                 <i className="fas fa-star" /> &amp; above
               </label>
             </li>
@@ -165,8 +165,8 @@ const ProductFilter = () => {
         <ul className="pl-10">
           <li className="py-5 display-flex align-items-center gap-1">
             <input
-              onChange={() => filterDispatch({ type: "HIGH_TO_LOW" })}
-              checked={filter.sortBy === "HIGH_TO_LOW"}
+              onChange={() => dispatch(filterHighToLow())}
+              checked={sortBy === "HIGH_TO_LOW"}
               type="radio"
               name="radio-sort"
               id="sort-htl"
@@ -175,8 +175,8 @@ const ProductFilter = () => {
           </li>
           <li className="py-5 display-flex align-items-center gap-1">
             <input
-              onChange={() => filterDispatch({ type: "LOW_TO_HIGH" })}
-              checked={filter.sortBy === "LOW_TO_HIGH"}
+              onChange={() => dispatch(filterLowToHigh())}
+              checked={sortBy === "LOW_TO_HIGH"}
               type="radio"
               name="radio-sort"
               id="sort-lth"

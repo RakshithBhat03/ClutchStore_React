@@ -1,10 +1,9 @@
-import { useProduct } from "../../../../context/";
-import { ProductCard } from "../../../../components/card/ProductCard";
+import { ProductCard } from "../../../../components";
 import { CollectionCard } from "./CollectionCard";
 import style from "./Collection.module.css";
+import { useSelector } from "react-redux";
 const Collection = () => {
-  const { productData } = useProduct();
-  const { products, categories } = productData;
+  const { allProducts, categories } = useSelector((store) => store.products);
   return (
     <section className={`p-13`}>
       <section className={`${style.main_popular}`}>
@@ -19,7 +18,7 @@ const Collection = () => {
         <h2 className="txt-center">Featured Products</h2>
         <div
           className={`${style.collection_list} display-flex flex-wrap gap-2 justify-content-evenly`}>
-          {products.map(
+          {allProducts.map(
             (product) =>
               product.isFeatured && (
                 <ProductCard key={product._id} product={product} />
