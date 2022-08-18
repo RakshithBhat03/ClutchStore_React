@@ -17,7 +17,7 @@ const Navigation = () => {
   const { cart, wishlist } = useSelector((store) => store.products);
   return (
     <header className="navigation-wrapper">
-      <div className="navigation max-width-1200 mx-auto">
+      <div className="navigation max-width-1200 mx-auto justify-content-between">
         <div className="navigation__title">
           <Link to="/">
             <img
@@ -27,13 +27,7 @@ const Navigation = () => {
             />
           </Link>
         </div>
-        <div className="navigation__search">
-          <div className="navigation__search-icon">
-            <i className="fas fa-search" />
-          </div>
-          <input type="text" className="input-field input--lg" />
-        </div>
-        <div className="navigation__login">
+        <div className="navigation__login ml-auto">
           <button onClick={handleAuth} className="btn btn-auth btn--md px-12">
             {userToken ? `Logout` : `Login`}
           </button>
@@ -43,7 +37,7 @@ const Navigation = () => {
             <i className="fas fa-bars" />
           </button>
         </div>
-        <div className="navigation__menu">
+        <div className="navigation__menu mx-0">
           <ul className="navigation__menu-list">
             <li>
               <Link to="/wishlist">
