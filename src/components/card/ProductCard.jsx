@@ -94,6 +94,7 @@ const ProductCard = ({ product }) => {
                         setBtnLoader((state) => !state))
                       : navigate("/login");
                   }}
+                  disabled={btnLoader}
                   className={`btn btn--lg btn--primary txt-white btn--icon width-100 ${style.btn__primary_dark}`}>
                   {btnLoader ? (
                     <Loader width="1rem" height="1rem" />
