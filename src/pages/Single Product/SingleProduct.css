@@ -34,12 +34,13 @@
 .product-cta {
   margin-top: 5rem;
 }
-.card__badge {
+.card__badge-wrapper {
   border-radius: var(--radius-md);
   background-color: var(--primary-color-dark);
   padding: var(--size-4) var(--size-5);
   top: var(--size-7);
-  left: var(--size-7);
+  left: auto;
+  right: var(--size-7);
 }
 .above_four_rating {
   color: var(--input-success);
@@ -50,4 +51,10 @@
 }
 .below_three_rating {
   color: var(--btn-danger);
+}
+.btn-back {
+  font-size: 3rem;
+  color: var(--primary-color-dark);
+  top: 1rem;
+  z-index: 10;
 }
