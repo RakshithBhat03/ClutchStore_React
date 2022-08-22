@@ -26,6 +26,9 @@
   background-color: var(--icon-danger);
 }
 
+.navigation__menu-list {
+  gap: 0;
+}
 /* Icon */
 
 .navigation__menu-list .nav-icon {

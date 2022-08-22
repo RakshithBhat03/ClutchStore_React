@@ -46,9 +46,9 @@ const SingleProduct = () => {
         <Loader />
       </div>
     ) : (
-      <section className="width-100 single-product-wrapper display-flex p-16 ">
+      <section className="width-100 single-product-wrapper display-flex p-16">
         <div className="mx-auto single-product card--box-shadow display-flex justify-content-center position-relative ">
-          <figure className="product-image display-flex align-items-center ">
+          <figure className="product-image display-flex align-items-center position-relative">
             {imageLoader && <Loader />}
             <img
               src={currentProduct.image_URL}
@@ -60,6 +60,11 @@ const SingleProduct = () => {
               }
               onLoad={() => setImageLoader(false)}
             />
+            <button
+              className="mr-auto ml-9 txt-md btn-back position-absolute"
+              onClick={() => navigate("/products")}>
+              <i class="fa-solid fa-circle-left"></i>
+            </button>
           </figure>
           {isLoading ? (
             <Loader />
@@ -167,7 +172,8 @@ const SingleProduct = () => {
           )}
           {!isLoading && !currentProduct.inStock && (
             <div className="card__overlay-container">
-              <div className={`card__badge overflow-hidden txt-md`}>
+              <div
+                className={`card__badge card__badge-wrapper overflow-hidden txt-md`}>
                 Sold Out
               </div>
             </div>

@@ -8,7 +8,7 @@ const Products = () => {
     <div className="main min-75-vh width-100">
       <main>
         <section
-          className={`${style.products_wrapper} display-grid width-100 mx-auto min-75-vh mt-9`}>
+          className={`${style.products_wrapper} display-grid width-100 mx-auto min-75-vh my-9`}>
           <ProductFilter />
           <ProductShowcase />
         </section>

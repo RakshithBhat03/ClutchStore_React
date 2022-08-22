@@ -38,7 +38,6 @@ const ProductFilter = () => {
           Reset
         </button>
       </header>
-      <hr />
       <section className="filter-price display-flex flex-col justify-content-center gap-1">
         <h4 className="my-1">Price</h4>
         <div className="price-slider width-100 ">
@@ -48,7 +47,7 @@ const ProductFilter = () => {
             max={20000}
             step={4000}
             list="tickmarks"
-            className="input-slider width-100"
+            className={`input-slider width-100 ${style.input_slider}`}
             onChange={(event) => dispatch(filterPriceRange(event.target.value))}
             value={priceRange}
           />
@@ -64,14 +63,13 @@ const ProductFilter = () => {
           </datalist>
         </div>
       </section>
-      <hr />
       <section className="filter-category display-flex flex-col justify-content-center gap-1">
         <h4 className="my-1 txt-bold">Category</h4>
         {isLoading && <Loader />}
         <ul className="pl-10">
           {categories.map((category) => (
             <li key={category._id} className="py-5">
-              <label className="txt-reg display-flex align-items-center">
+              <label className="txt-reg txt-semibold display-flex align-items-center">
                 <input
                   type="checkbox"
                   name="category"
@@ -87,10 +85,9 @@ const ProductFilter = () => {
           ))}
         </ul>
       </section>
-      <hr />
       <section className="filter-category display-flex flex-col justify-content-center gap-1">
         <h4 className="my-1 txt-bold">Fast Delivery</h4>
-        <label className="txt-reg display-flex align-items-center ml-9">
+        <label className="txt-reg txt-semibold display-flex align-items-center ml-9">
           <input
             type="checkbox"
             name="fast-delivery"
@@ -101,10 +98,9 @@ const ProductFilter = () => {
           Only Fast Delivery
         </label>
       </section>
-      <hr />
       <section className="filter-category display-flex flex-col justify-content-center gap-1">
         <h4 className="my-1 txt-bold">In Stock</h4>
-        <label className="txt-reg display-flex align-items-center ml-9">
+        <label className="txt-reg txt-semibold display-flex align-items-center ml-9">
           <input
             type="checkbox"
             name="in-stock"
@@ -115,14 +111,13 @@ const ProductFilter = () => {
           Only In Stock
         </label>
       </section>
-      <hr />
       <section className="filter-category display-flex flex-col justify-content-center gap-1">
         <h4 className="my-1 txt-bold">Teams</h4>
         {isLoading && <Loader />}
         <ul className="pl-10">
           {teams.map((team) => (
             <li key={team._id} className="py-5">
-              <label className="txt-reg display-flex align-items-center">
+              <label className="txt-reg txt-semibold display-flex align-items-center">
                 <input
                   type="checkbox"
                   name="team"
@@ -136,7 +131,6 @@ const ProductFilter = () => {
           ))}
         </ul>
       </section>
-      <hr />
       <section className="filter-rating display-flex flex-col justify-content-center gap-1">
         <h4 className="my-1 ">Ratings</h4>
         <ul className="pl-10">
@@ -159,11 +153,10 @@ const ProductFilter = () => {
           ))}
         </ul>
       </section>
-      <hr />
       <section className="filter-sort display-flex flex-col justify-content-center gap-1">
         <h4 className="my-1 txt-bold">Sort by</h4>
         <ul className="pl-10">
-          <li className="py-5 display-flex align-items-center gap-1">
+          <li className="py-5 txt-semibold display-flex align-items-center gap-1">
             <input
               onChange={() => dispatch(filterHighToLow())}
               checked={sortBy === "HIGH_TO_LOW"}
@@ -173,7 +166,7 @@ const ProductFilter = () => {
             />
             <label htmlFor="sort-htl">High to low</label>
           </li>
-          <li className="py-5 display-flex align-items-center gap-1">
+          <li className="py-5 txt-semibold display-flex align-items-center gap-1">
             <input
               onChange={() => dispatch(filterLowToHigh())}
               checked={sortBy === "LOW_TO_HIGH"}

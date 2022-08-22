@@ -1,5 +1,5 @@
 .products_wrapper {
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 6fr;
 }
 @media screen and (max-width: 900px) {
   .products_wrapper {
