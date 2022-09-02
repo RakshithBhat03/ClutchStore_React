@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuid } from "uuid";
 import { useNavigate } from "react-router";
 import { loadScript, ShowToast } from "../../../../components";
-import { clearCart } from "../../../../features/productSlice";
+import { clearCart, placeOrder } from "../../../../features/productSlice";
 import { removeAllItemsFromCart } from "../../../../actions";
 function CartSummary() {
   const { cart } = useSelector((store) => store.products);
   const { userData } = useSelector((store) => store.auth);
+  const { isAddressSelected } = useSelector((store) => store.address);
   const { orderSubtotal, shippingCharges, taxCharges, totalPrice } =
     getTotalCharges(cart);
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ function CartSummary() {
           razorpaySignature: response.razorpay_signature,
         };
         dispatch(removeAllItemsFromCart());
+        dispatch(placeOrder(cart));
         ShowToast({ type: "success", message: "Order placed" });
         navigate("/");
       },
@@ -88,7 +90,10 @@ function CartSummary() {
       </div>
       <button
         type="button"
-        className=" width-30 btn btn--primary-dark btn--md  mx-auto txt-white display-flex justify-content-center"
+        className={`width-30 btn btn--primary-dark btn--md  mx-auto txt-white display-flex justify-content-center ${
+          isAddressSelected ? "" : "btn-disabled"
+        }`}
+        disabled={!isAddressSelected}
         onClick={() => handlePayment(totalPrice)}>
         <span>Pay now</span>
       </button>

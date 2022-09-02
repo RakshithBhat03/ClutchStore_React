@@ -1,4 +1,4 @@
-const applyDiscount = (discount, currentPrice) =>
+export const applyDiscount = (discount, currentPrice) =>
   (Number(discount) * Number(currentPrice)) / 100;
 
 const highToLow = (previous, current) =>

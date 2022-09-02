@@ -40,6 +40,15 @@ const Navigation = () => {
         <div className="navigation__menu mx-0">
           <ul className="navigation__menu-list">
             <li>
+              <Link to="/profile">
+                <button className="btn btn--md btn--icon btn--outline">
+                  <div className="badge-icon badge-icon--sm">
+                    <i className="fas fa-user nav-icon" />
+                  </div>
+                </button>
+              </Link>
+            </li>
+            <li>
               <Link to="/wishlist">
                 <button className="btn btn--md btn--icon btn--outline">
                   <div className="badge-icon badge-icon--sm">

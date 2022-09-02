@@ -1,0 +1,8 @@
+.btn-profile-nav {
+  cursor: pointer;
+}
+.tab-profile-active {
+  text-decoration: underline;
+  background-color: var(--primary-color-dark);
+  color: var(--color-white);
+}

@@ -3,6 +3,7 @@ import {
   addNewAddressHandler,
   getAllAddressesHandler,
   removeAddressHandler,
+  updateAddressHandler,
 } from "./backend/controllers/AddressController";
 import {
   loginHandler,
@@ -102,6 +103,10 @@ export function makeServer({ environment = "development" } = {}) {
       this.get("/user/addresses", getAllAddressesHandler.bind(this));
       this.post("/user/address", addNewAddressHandler.bind(this));
       this.delete("/user/address/:addressId", removeAddressHandler.bind(this));
+      this.post(
+        "/user/address/edit/:addressId",
+        updateAddressHandler.bind(this)
+      );
     },
   });
 }

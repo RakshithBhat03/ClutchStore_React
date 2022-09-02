@@ -8,3 +8,7 @@ export { ProductCard } from "./card/ProductCard";
 export { loadScript } from "./Razorpay/loadScript";
 export { ScrollToTop } from "./ScrollToTop/ScrollToTop";
 export { SplashScreen } from "./SplashScreen/SplashScreen";
+export { ProfileNavigation } from "./Profile Navigation/ProfileNavigation";
+export * from "./AddressForm/AddressForm";
+export { Modal } from "./Modal/Modal";
+export { AddressSelection } from "./AddressSelection/AddressSelection";

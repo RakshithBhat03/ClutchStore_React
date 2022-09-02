@@ -13,3 +13,8 @@
   max-height: calc(23 * var(--size-9));
   align-self: start;
 }
+
+.btn-disabled {
+  opacity: 0.5;
+  cursor: default;
+}

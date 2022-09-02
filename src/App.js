@@ -3,7 +3,12 @@ import { AllRoutes } from "./routes/AllRoutes";
 import { Navigation, Footer } from "./components/";
 import { ToastContainer } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllProducts, getCartItems, getCategories } from "./actions";
+import {
+  getAllAddress,
+  getAllProducts,
+  getCartItems,
+  getCategories,
+} from "./actions";
 import { useEffect } from "react";
 
 function App() {
@@ -12,6 +17,7 @@ function App() {
   useEffect(() => {
     dispatch(getCategories());
     dispatch(getAllProducts());
+    dispatch(getAllAddress());
   }, []);
   useEffect(() => {
     if (status) dispatch(getCartItems());

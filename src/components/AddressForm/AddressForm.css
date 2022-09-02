@@ -1,0 +1,5 @@
+.input-label {
+  color: var(--color-dark-gray);
+  gap: 0.25rem;
+  font-size: 1.25rem;
+}
