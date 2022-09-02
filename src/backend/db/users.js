@@ -15,5 +15,16 @@ export const users = [
     password: "adarshbalika",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    address: [
+      {
+        _id: uuid(),
+        name: "Adarsh Balika",
+        street: "123 Street, 15th Cross, Vijaynagar",
+        city: "Bangalore",
+        state: "Karnataka",
+        country: "India",
+        pincode: "568712",
+      },
+    ],
   },
 ];

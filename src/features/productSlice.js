@@ -22,6 +22,7 @@ const initialState = {
   currentProduct: {},
   cart: [],
   wishlist: [],
+  orders: [],
   isLoading: false,
   isCategoryLoading: false,
   isCartLoading: false,
@@ -45,6 +46,9 @@ const productSlice = createSlice({
     clearCart: (state) => {
       const cart = [];
       return (state = { ...state, cart });
+    },
+    placeOrder: (state, action) => {
+      state.orders.push(...action.payload);
     },
   },
   extraReducers: {
@@ -198,6 +202,6 @@ const productSlice = createSlice({
     },
   },
 });
-export const { clearCurrentProduct, clearProductState, clearCart } =
+export const { clearCurrentProduct, clearProductState, clearCart, placeOrder } =
   productSlice.actions;
 export default productSlice.reducer;

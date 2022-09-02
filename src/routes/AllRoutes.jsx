@@ -7,6 +7,7 @@ import {
   Wishlist,
   Signup,
   SingleProduct,
+  Profile,
 } from "../pages";
 import Mockman from "mockman-js";
 import { RequireAuth } from "./RequireAuth";
@@ -24,6 +25,7 @@ const AllRoutes = () => {
       <Route element={<RequireAuth />}>
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/profile" element={<Profile />} />
       </Route>
       <Route path="/mock" element={<Mockman />} />
       <Route

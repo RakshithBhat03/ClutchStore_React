@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartItems } from "../../actions";
-import { SplashScreen } from "../../components";
+import { AddressSelection, SplashScreen } from "../../components";
 import { useDocumentTitle } from "../../hooks";
 import style from "./Cart.module.css";
 import { CartProducts, CartSummary } from "./components";
@@ -19,6 +19,7 @@ function Cart() {
           <div
             className={`${style.cart_wrapper} display-grid mx-auto my-15 width-80 gap-1`}>
             <CartProducts />
+            <AddressSelection />
             <CartSummary />
           </div>
         ) : (
