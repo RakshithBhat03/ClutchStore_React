@@ -9,7 +9,7 @@ import { inWishlist } from "../../../../utils/inWishlist";
 import "./CartProductCard.css";
 
 function CartProductCard({ cartItem }) {
-  const { wishlist } = useSelector((store) => store.products);
+  const { wishlist, isCartLoading } = useSelector((store) => store.products);
   const dispatch = useDispatch();
   return (
     <div className="card card--horizontal card--box-shadow width-100 mx-auto">
@@ -47,7 +47,7 @@ function CartProductCard({ cartItem }) {
                   )
             }
             type="button"
-            disabled={cartItem.qty === 1}
+            disabled={cartItem.qty === 1 || isCartLoading}
             className="btn btn--md btn--quantity display-flex justify-content-center align-items-center">
             <i className="fas fa-minus" />
           </button>
@@ -61,6 +61,7 @@ function CartProductCard({ cartItem }) {
                 })
               )
             }
+            disabled={isCartLoading}
             type="button"
             className="btn btn--md btn--quantity display-flex justify-content-center align-items-center">
             <i className="fas fa-plus" />
@@ -75,7 +76,7 @@ function CartProductCard({ cartItem }) {
                 }}
                 className={`btn btn--primary-dark btn--md txt-white btn--icon`}>
                 <i className="fas fa-heart" />
-                Move to wishlist
+                Add to wishlist
               </button>
             )}
             <button
