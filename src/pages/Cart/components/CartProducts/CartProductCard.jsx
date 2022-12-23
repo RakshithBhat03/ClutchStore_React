@@ -7,12 +7,19 @@ import {
 import { getDiscountedPrice } from "../../../../utils/getDiscountedPrice";
 import { inWishlist } from "../../../../utils/inWishlist";
 import "./CartProductCard.css";
+import { motion } from "framer-motion";
 
 function CartProductCard({ cartItem }) {
   const { wishlist, isCartLoading } = useSelector((store) => store.products);
   const dispatch = useDispatch();
   return (
-    <div className="card card--horizontal card--box-shadow width-100 mx-auto">
+    <motion.div
+      layout
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.35 }}
+      className="card card--horizontal card--box-shadow width-100 mx-auto">
       <div className="card__img">
         <img
           src={cartItem.image_URL}
@@ -94,7 +101,7 @@ function CartProductCard({ cartItem }) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -8,6 +8,7 @@ import { addToCart } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Loader } from "../Loader/Loader";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 const ProductCard = ({ product }) => {
   const [imageLoader, setImageLoader] = useState(true);
   const [btnLoader, setBtnLoader] = useState(false);
@@ -24,7 +25,12 @@ const ProductCard = ({ product }) => {
     navigate("/cart");
   };
   return (
-    <div
+    <motion.div
+      layout
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.35 }}
       onClick={() => {
         navigate(`/products/${product._id}`);
       }}
@@ -121,7 +127,7 @@ const ProductCard = ({ product }) => {
           <WishlistButton product={product} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
