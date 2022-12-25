@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { closeModal } from "../../features/modalSlice";
 import "./Modal.css";
-const Modal = ({ children }) => {
+const Modal = ({ children, disableClose }) => {
   const modal = useSelector((store) => store.modal);
   const dispatch = useDispatch();
   if (!modal) return null;
@@ -13,11 +13,13 @@ const Modal = ({ children }) => {
         <div
           onClick={(e) => e.stopPropagation()}
           className={`flex flex-col modal-container py-4 px-6 gap-1`}>
-          <button
-            onClick={() => dispatch(closeModal())}
-            className="txt-md ml-auto position-absolute modal-close">
-            <i className="fas fa-times"></i>
-          </button>
+          {!disableClose && (
+            <button
+              onClick={() => dispatch(closeModal())}
+              className="txt-md ml-auto position-absolute modal-close">
+              <i className="fas fa-times"></i>
+            </button>
+          )}
           {children}
         </div>
       </div>

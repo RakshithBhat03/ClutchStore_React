@@ -22,6 +22,6 @@
 
 @media screen and (max-width: 550px) {
   .collection {
-    width: calc(15 * var(--size-9));
+    width: calc(17 * var(--size-9));
   }
 }

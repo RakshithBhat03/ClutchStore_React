@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Loader } from "../../../../components";
+import { Loader, Modal } from "../../../../components";
 import {
   filterCategory,
   filterFastDelivery,
