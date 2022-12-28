@@ -77,3 +77,14 @@
 .below_three_rating {
   color: var(--btn-danger);
 }
+
+@media screen and (max-width: 480px) {
+  .btn__primary_dark,
+  .btn__success {
+    font-size: 0.75rem;
+    font-weight: var(--weight-bold);
+  }
+  .product {
+    margin-inline: auto;
+  }
+}

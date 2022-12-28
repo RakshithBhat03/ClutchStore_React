@@ -60,12 +60,12 @@ const SingleProduct = () => {
               }
               onLoad={() => setImageLoader(false)}
             />
-            <button
-              className="mr-auto ml-9 txt-md btn-back position-absolute"
-              onClick={() => navigate("/products")}>
-              <i class="fa-solid fa-circle-left"></i>
-            </button>
           </figure>
+          <button
+            className="mr-auto ml-9 txt-md btn-back position-absolute"
+            onClick={() => navigate("/products")}>
+            <i class="fa-solid fa-circle-left"></i>
+          </button>
           {isLoading ? (
             <Loader />
           ) : (
@@ -116,7 +116,7 @@ const SingleProduct = () => {
                     <div className="card__link--btn width-100 justify-content-center">
                       {inCart(cart, currentProduct._id) ? (
                         <button
-                          className="btn btn--lg btn--success txt-white btn--icon width-100"
+                          className="btn btn--lg btn--success btn-cta txt-white btn--icon width-100"
                           onClick={() => navigate("/cart")}>
                           <i className="fas fa-cart-plus" />
                           Go to Cart
@@ -128,7 +128,7 @@ const SingleProduct = () => {
                               ? dispatch(addToCart(currentProduct))
                               : navigate("/login")
                           }
-                          className={`btn btn--lg btn--primary txt-white btn--icon width-100 ${style.btn__primary_dark}`}>
+                          className={`btn btn--lg btn--primary btn-cta txt-white btn--icon width-100 ${style.btn__primary_dark}`}>
                           {isCartLoading ? (
                             <Loader width="1rem" height="1rem" />
                           ) : (
@@ -141,7 +141,7 @@ const SingleProduct = () => {
                       )}
                       {inWishlist(wishlist, currentProduct._id) ? (
                         <button
-                          className="btn btn--lg btn--primary txt-white btn--icon width-100"
+                          className="btn btn--lg btn--primary btn-cta txt-white btn--icon width-100"
                           onClick={() => navigate("/wishlist")}>
                           <i className="fas fa-cart-plus" />
                           Go to Wishlist
@@ -153,7 +153,7 @@ const SingleProduct = () => {
                               ? dispatch(addToWishlist(currentProduct))
                               : navigate("/login")
                           }
-                          className={`btn btn--primary btn--lg btn--md width-100 txt-white btn--icon`}>
+                          className={`btn btn--primary btn--lg btn--md btn-cta width-100 txt-white btn--icon`}>
                           {isWishlistLoading ? (
                             <Loader width="1rem" height="1rem" />
                           ) : (

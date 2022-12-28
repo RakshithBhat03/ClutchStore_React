@@ -18,3 +18,9 @@
   opacity: 0.5;
   cursor: default;
 }
+
+@media screen and (max-width: 660px) {
+  .product-price-cart {
+    font-size: 1rem;
+  }
+}

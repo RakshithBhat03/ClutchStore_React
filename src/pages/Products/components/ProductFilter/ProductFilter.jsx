@@ -11,6 +11,7 @@ import {
   filterReset,
   filterTeam,
 } from "../../../../features/filterSlice";
+import { closeModal } from "../../../../features/modalSlice";
 import style from "./ProductFilter.module.css";
 const ProductFilter = () => {
   const { categories, teams, isLoading } = useSelector(
@@ -34,8 +35,14 @@ const ProductFilter = () => {
         <button
           type="button"
           onClick={() => dispatch(filterReset())}
-          className={`btn ${style.btn__primary_dark} btn--md txt-white filter-clear-btn`}>
+          className={`btn ${style.btn__primary_dark} btn--md txt-white filter-clear-btn ml-auto`}>
           Reset
+        </button>
+        <button
+          type="button"
+          onClick={() => dispatch(closeModal())}
+          className={`btn ${style.btn__close_modal} btn--md txt-white filter-clear-btn`}>
+          <i className="fa fa-times"></i>
         </button>
       </header>
       <section className="filter-price display-flex flex-col justify-content-center gap-1">

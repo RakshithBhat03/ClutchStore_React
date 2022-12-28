@@ -13,6 +13,13 @@
   border-radius: var(--radius-round);
 }
 
+.card__img {
+  margin: 0;
+}
+
+.card__body {
+  margin-top: 0;
+}
 @media screen and (max-width: 660px) {
   .card--horizontal {
     flex-direction: column;
@@ -23,5 +30,11 @@
   }
   .card__quantity p {
     font-size: var(--size-9);
+  }
+  .card__title {
+    font-size: 1.25rem;
+  }
+  .cart-image {
+    height: 150px;
   }
 }

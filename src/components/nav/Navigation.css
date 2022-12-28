@@ -75,4 +75,7 @@
     width: 100%;
     border-top: 2px dotted var(--primary-color);
   }
+  .nav--logo {
+    width: 10rem;
+  }
 }

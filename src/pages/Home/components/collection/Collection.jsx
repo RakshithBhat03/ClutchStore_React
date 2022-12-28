@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const Collection = () => {
   const { allProducts, categories } = useSelector((store) => store.products);
   return (
-    <section className={`p-13`}>
+    <section className={`p-13 ${style.section_wrapper}`}>
       <section className={`${style.main_popular}`}>
         <h2 className="txt-center">Categories</h2>
         <div className="collection-list display-flex flex-wrap gap-2 justify-content-evenly">

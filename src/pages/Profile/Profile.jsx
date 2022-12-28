@@ -65,7 +65,7 @@ const Profile = () => {
                 onClick={() => dispatch(openModal())}
                 className={`btn btn--md btn--primary txt-white btn--icon btn-primary-dark btn`}>
                 <i className="fas fa-plus" />
-                Add Address
+                <span className="btn-address">Add Address</span>
               </button>
             )}
           </div>
@@ -132,7 +132,7 @@ const Profile = () => {
                   <figure>
                     <img src={order.image_URL} alt="" className="img-order" />
                   </figure>
-                  <span className="txt-semibold">
+                  <span className="txt-semibold order-details">
                     {order.name} x {order.qty} - ₹
                     {(Number(order.price) -
                       applyDiscount(order.discount, order.price)) *

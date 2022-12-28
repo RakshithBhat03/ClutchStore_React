@@ -14,7 +14,9 @@ const AddressSelection = () => {
       {address.length > 0 ? (
         <div className="display-flex flex-col gap-1">
           {address.map((currentAddress) => (
-            <label className="display-flex address-container p-9 gap-1">
+            <label
+              key={currentAddress._id}
+              className="display-flex address-container p-9 gap-1">
               <input
                 type="radio"
                 className="mr-6"
