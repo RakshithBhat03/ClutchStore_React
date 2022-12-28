@@ -16,12 +16,19 @@
   color: var(--material-dark);
 }
 
-.main_collection {
-  /* width: 80vw; */
-}
-
 @media screen and (max-width: 550px) {
   .collection {
-    width: calc(15 * var(--size-9));
+    width: calc(17 * var(--size-9));
+  }
+  .main_collection h2,
+  .main_popular h2 {
+    font-size: 1.8rem;
+    margin-block: 1rem;
+  }
+  .section_wrapper {
+    padding: 0;
+  }
+  .collection img {
+    width: 80%;
   }
 }

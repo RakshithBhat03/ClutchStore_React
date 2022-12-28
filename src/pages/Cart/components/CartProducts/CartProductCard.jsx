@@ -24,7 +24,7 @@ function CartProductCard({ cartItem }) {
         <img
           src={cartItem.image_URL}
           alt={cartItem.title}
-          className="img--responsive"
+          className="img--responsive cart-image"
         />
       </div>
       <div className="card__body">

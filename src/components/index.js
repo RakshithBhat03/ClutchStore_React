@@ -12,3 +12,4 @@ export { ProfileNavigation } from "./Profile Navigation/ProfileNavigation";
 export * from "./AddressForm/AddressForm";
 export { Modal } from "./Modal/Modal";
 export { AddressSelection } from "./AddressSelection/AddressSelection";
+export { ToggleFilter } from "./ToggleFilter/ToggleFilter";

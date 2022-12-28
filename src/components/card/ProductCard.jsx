@@ -86,7 +86,7 @@ const ProductCard = ({ product }) => {
             <div className="card__link--btn width-100 justify-content-center">
               {inCart(cart, product._id) ? (
                 <button
-                  className="btn btn--lg btn--success txt-white btn--icon width-100"
+                  className={`btn btn--lg btn--success ${style.btn__success} txt-white btn--icon width-100`}
                   onClick={navigateToCart}>
                   <i className="fas fa-cart-plus" />
                   Go to Cart

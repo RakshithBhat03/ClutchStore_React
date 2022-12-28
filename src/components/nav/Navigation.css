@@ -8,6 +8,12 @@
 .nav--logo {
   width: 12.5rem;
 }
+
+.navigation__title {
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+}
 /* Badge overwrite */
 
 .badge--sm {
@@ -29,8 +35,47 @@
 .navigation__menu-list {
   gap: 0;
 }
+
+.navigation__hamburger button {
+  color: var(--primary-color);
+}
+
 /* Icon */
 
 .navigation__menu-list .nav-icon {
   color: var(--material-black);
+}
+
+@media screen and (max-width: 768px) {
+  .navigation__menu-list {
+    flex-direction: column;
+    margin-inline: auto;
+    padding-top: 1rem;
+  }
+  .navigation__menu-list button {
+    color: var(--primary-color-dark);
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  .navigation__login {
+    display: block;
+  }
+  .navigation__hamburger {
+    margin-left: 0;
+  }
+  .navigation__login button {
+    font-size: 0.75rem;
+    padding: var(--size-7) var(--size-9);
+  }
+  .navigation {
+    flex-direction: column;
+  }
+  .navigation--open {
+    display: flex;
+    width: 100%;
+    border-top: 2px dotted var(--primary-color);
+  }
+  .nav--logo {
+    width: 10rem;
+  }
 }

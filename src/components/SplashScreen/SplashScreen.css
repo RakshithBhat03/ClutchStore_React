@@ -1,3 +1,20 @@
 .img-wrapper {
   width: 30rem;
 }
+
+@media screen and (max-width: 768px) {
+  .img-wrapper {
+    width: 25rem;
+  }
+  .splashscreen-wrapper h2 {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .img-wrapper {
+    width: 18rem;
+  }
+  .splashscreen-wrapper button {
+    font-size: 0.75rem;
+  }
+}

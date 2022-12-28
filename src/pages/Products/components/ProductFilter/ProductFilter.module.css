@@ -16,6 +16,11 @@
 .filter_wrapper::-webkit-scrollbar-track {
   background-color: var(--color-white);
 }
+.btn__close_modal {
+  color: var(--primary-color-dark);
+  display: none;
+  font-size: 1.5rem;
+}
 
 .filter_wrapper::-webkit-scrollbar {
   width: 10px;
@@ -40,6 +45,10 @@ input[type="radio"] {
 
 @media screen and (max-width: 900px) {
   .filter_wrapper {
-    display: none;
+    width: 100%;
+    margin: 0;
+  }
+  .btn__close_modal {
+    display: block;
   }
 }

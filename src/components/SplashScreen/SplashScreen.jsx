@@ -3,7 +3,7 @@ import "./SplashScreen.css";
 const SplashScreen = ({ text, notFound, emptyCart, successfulPurchase }) => {
   const navigate = useNavigate();
   return (
-    <main className="width-100 display-flex justify-content-center align-items-center flex-col">
+    <main className="splashscreen-wrapper width-100 display-flex justify-content-center align-items-center flex-col">
       <figure className="img-wrapper mx-auto">
         <img
           src={`${
@@ -18,7 +18,7 @@ const SplashScreen = ({ text, notFound, emptyCart, successfulPurchase }) => {
           alt="splash-screen"
         />
       </figure>
-      <h2 className="text-2xl md:text-3xl text-center">{text}</h2>
+      <h2 className="text-center">{text}</h2>
       <button
         onClick={() => navigate("/products")}
         className="btn btn--primary-dark btn--lg txt-white">

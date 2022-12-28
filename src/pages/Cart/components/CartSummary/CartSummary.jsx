@@ -70,22 +70,26 @@ function CartSummary() {
       <div className="product-total-wrapper display-flex flex-col justify-content-center gap-1">
         <div className="product-subtotal display-flex align-items-center justify-content-between">
           <p className="txt-medium">Order Subtotal</p>
-          <span className="product-price txt-semibold">₹{orderSubtotal}</span>
+          <span className="product-price-cart txt-semibold">
+            ₹{orderSubtotal}
+          </span>
         </div>
         <hr />
         <div className="product-shipping display-flex align-items-center justify-content-between">
           <p>Shipping and handling</p>
-          <span className="product-price txt-semibold">₹{shippingCharges}</span>
+          <span className="product-price-cart txt-semibold">
+            ₹{shippingCharges}
+          </span>
         </div>
         <hr />
         <div className="product-tax display-flex align-items-center justify-content-between">
           <p>Tax</p>
-          <span className="product-price txt-semibold">₹{taxCharges}</span>
+          <span className="product-price-cart txt-semibold">₹{taxCharges}</span>
         </div>
         <hr />
         <div className="product-total display-flex align-items-center justify-content-between">
           <p>Total</p>
-          <span className="product-price txt-bold">₹{totalPrice}</span>
+          <span className="product-price-cart txt-bold">₹{totalPrice}</span>
         </div>
       </div>
       <button
